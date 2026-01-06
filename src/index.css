@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* ألوانك الأصلية Premium Slate & Indigo Palette */
+  --background: 210 40% 98%;
+  --foreground: 222 47% 11%;
+
+  --primary: 24 100% 50%; /* Pure Orange */
+  --primary-foreground: 210 40% 98%;
+
+  --card: 0 0% 100%;
+  --card-foreground: 222 47% 11%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 222 47% 11%;
+
+  --secondary: 222 47% 11%; /* Deep Indigo/Slate */
+  --secondary-foreground: 210 40% 98%;
+
+  --muted: 210 40% 96.1%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+
+  --accent: 24 100% 50%;
+  --accent-foreground: 222 47% 11%;
+
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
+
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
+  --ring: 24 100% 50%;
+
+  --radius: 1.25rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    direction: rtl;
+    /* إزالة scroll-behavior: smooth لأنها قد تسبب بطء في استجابة اللمس على بعض هواتف أندرويد */
+  }
+
+  body {
+    @apply bg-slate-50 text-slate-900;
+    font-family: 'Tajawal', sans-serif !important;
+    /* تحسينات إضافية للهاتف لمنع التحديد والومضات الزرقاء */
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Tajawal', sans-serif !important;
+    @apply font-black tracking-tight;
+  }
+}
+
+/* إخفاء شريط التمرير بشكل نهائي لجعل التطبيق يبدو أصلياً (Native) */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* تفعيل إخفاء السكرول بار على كامل التطبيق */
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+.font-tajawal {
+  font-family: 'Tajawal', sans-serif !important;
+}
